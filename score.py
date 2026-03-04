@@ -1,6 +1,11 @@
 def add_points(game,amount):
-    game["score"] += amount
-    return game
+    if amount < 0:
+        raise ValueError("Enter a positive number")
+    elif game['active'] == False:
+        return game
+    else:
+        game["score"] += amount * game['multiplier']
+        return game
 
 def apply_multiplier(game, multiplier):
     game["multiplier"] += multiplier
