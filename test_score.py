@@ -2,7 +2,7 @@ import pytest
 from score import add_points, apply_multiplier, reset_score, is_high_score
 
 def test_add_points(game):
-    result = add_points(game,10)
+    result = add_points(game,20)
     assert result["score"] == 20
 
 def test_apply_multiplier(game,):
