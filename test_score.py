@@ -29,7 +29,14 @@ def test_apply_multiplier(game):
 
 def test_reset_score(game2):
     result = reset_score(game2)
-    assert result["score"] == 0
+    assert result["score"] == 0 and result["multiplier"] == 1
+
+def test_reset_score_inactive(game):
+    game["active"] = False
+    game["score"] = 2
+    game["multiplier"] = 2
+    result = reset_score(game)
+    assert result["score"] == 0 and result["multiplier"] == 1
 
 def test_is_high_score(game2):
     result = is_high_score(game2,30)

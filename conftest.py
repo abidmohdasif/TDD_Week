@@ -14,4 +14,4 @@ def game():
 
 @pytest.fixture
 def game2():
-    return {"score": 40, "multiplier": 1, "active": True}
+    return {"score": 40, "multiplier": 3, "active": True}

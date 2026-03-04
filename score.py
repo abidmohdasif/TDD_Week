@@ -18,6 +18,7 @@ def apply_multiplier(game, multiplier):
 
 def reset_score(game2):
     game2["score"] = 0
+    game2["multiplier"] = 1
     return game2
 
 def is_high_score(game2, threshold):
