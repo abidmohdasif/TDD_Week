@@ -8,8 +8,13 @@ def add_points(game,amount):
         return game
 
 def apply_multiplier(game, multiplier):
-    game["multiplier"] += multiplier
-    return game
+    if multiplier < 1:
+        raise ValueError("It has to be greater than or equal to 1")
+    elif game["active"] == False:
+        return game
+    else:
+        game["multiplier"] += multiplier
+        return game
 
 def reset_score(game2):
     game2["score"] = 0

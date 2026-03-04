@@ -14,6 +14,10 @@ def test_add_points_inactive(game):
     result = add_points(game,20)
     assert result["score"] == 0 
 
+def test_apply_multiplier_negative(game):
+    with pytest.raises(ValueError):
+        apply_multiplier(game,0)
+
 def test_apply_multiplier(game):
     result = apply_multiplier(game,2)
     assert result["multiplier"] == 3
