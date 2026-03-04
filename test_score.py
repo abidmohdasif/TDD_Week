@@ -41,3 +41,7 @@ def test_reset_score_inactive(game):
 def test_is_high_score(game2):
     result = is_high_score(game2,30)
     assert result == True
+
+def test_is_high_score_greater_or_equal(game):
+    with pytest.raises(ValueError):
+        is_high_score(game, -1)
