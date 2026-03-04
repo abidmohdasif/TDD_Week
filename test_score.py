@@ -18,6 +18,11 @@ def test_apply_multiplier_negative(game):
     with pytest.raises(ValueError):
         apply_multiplier(game,0)
 
+def test_apply_multiplier_inactive(game):
+    game["active"] = False
+    result = apply_multiplier(game,2)
+    assert result["multiplier"] == 1 
+
 def test_apply_multiplier(game):
     result = apply_multiplier(game,2)
     assert result["multiplier"] == 3
