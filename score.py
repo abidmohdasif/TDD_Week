@@ -3,7 +3,8 @@ def add_points(game,amount):
     return game
 
 def apply_multiplier(game, multiplier):
-    pass
+    game["multiplier"] += multiplier
+    return game
 
 def reset_score(game):
     pass
