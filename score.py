@@ -11,5 +11,7 @@ def reset_score(game2):
     return game2
 
 def is_high_score(game2, threshold):
-    result = game2["score"] > threshold
-    return result
+    if game2["score"] > threshold:
+        return True
+    else:
+        return False
