@@ -13,6 +13,6 @@ def test_reset_score(game2):
     result = reset_score(game2)
     assert result["score"] == 0
 
-def test_is_high_score(game,):
-    result = is_high_score(game,50)
+def test_is_high_score(game2):
+    result = is_high_score(game2,30)
     assert result == True
