@@ -11,3 +11,7 @@ def new_game():
 @pytest.fixture
 def game():
     return {"score": 0, "multiplier": 1, "active": True}
+
+@pytest.fixture
+def game2():
+    return {"score": 40, "multiplier": 1, "active": True}

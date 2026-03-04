@@ -9,8 +9,8 @@ def test_apply_multiplier(game):
     result = apply_multiplier(game,2)
     assert result["multiplier"] == 3
 
-def test_reset_score(game):
-    result = reset_score(game)
+def test_reset_score(game2):
+    result = reset_score(game2)
     assert result["score"] == 0
 
 def test_is_high_score(game,):

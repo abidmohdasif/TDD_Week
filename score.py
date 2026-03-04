@@ -6,8 +6,9 @@ def apply_multiplier(game, multiplier):
     game["multiplier"] += multiplier
     return game
 
-def reset_score(game):
-    pass
+def reset_score(game2):
+    assert game2["score"] == 0
+    return game2
 
 def is_high_score(game, threshold):
     pass
