@@ -27,7 +27,7 @@ def test_add_item_locked(empty_inventory):
 
 def test_remove_item(full_inventory):
     result = remove_item(full_inventory, "bmw")
-    assert result["item"] == ["audi"]
+    assert result["items"] == ["audi"]
 
 def test_remove_item_not_found(full_inventory):
     with pytest.raises(ValueError):
@@ -36,7 +36,7 @@ def test_remove_item_not_found(full_inventory):
 def test_remove_item_locked(full_inventory):
     full_inventory["locked"] = True
     result = remove_item(full_inventory, "bmw")
-    assert result["item"] ==["bmw","audi"]
+    assert result["items"] ==["bmw","audi"]
 
 def test_get_item_count(locked_inventory):
     result = get_item_count(locked_inventory)
