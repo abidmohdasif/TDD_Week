@@ -17,5 +17,5 @@ def remove_item(inventory, item):
     return inventory
 
 def get_item_count(inventory):
-    pass
+    return len(inventory["items"])
 
