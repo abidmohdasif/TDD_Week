@@ -37,3 +37,13 @@ def test_remove_item_locked(full_inventory):
     full_inventory["locked"] = True
     result = remove_item(full_inventory, "bmw")
     assert result["item"] ==["bmw","audi"]
+
+def test_get_item_count(locked_inventory):
+    result = get_item_count(locked_inventory)
+    assert result == 4
+
+def test_get_item_count_empty(empty_inventory):
+    empty_inventory["locked"] = True
+    result = get_item_count(empty_inventory)
+    assert result == 0
+
