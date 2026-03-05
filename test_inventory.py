@@ -3,7 +3,7 @@ from inventory import add_item, remove_item, get_item_count
 
 def test_add_item(empty_inventory):
     result = add_item(empty_inventory, "automobile")
-    assert result["item"] == ["automobile"]
+    assert result["items"] == ["automobile"]
 
 def test_add_item_empty(empty_inventory):
     with pytest.raises(ValueError):
@@ -23,7 +23,7 @@ def test_add_item_capacity(empty_inventory):
 def test_add_item_locked(empty_inventory):
     empty_inventory["locked"] = True
     result = add_item(empty_inventory, "Jeep")
-    assert result["item"] == []
+    assert result["items"] == []
 
 def test_remove_item(full_inventory):
     result = remove_item(full_inventory, "bmw")
