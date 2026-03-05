@@ -22,7 +22,7 @@ def empty_inventory():
 
 @pytest.fixture
 def full_inventory():
-    return {"items": ["a"] * 10, "capacity": 10, "locked": False}
+    return {"items": ["bmw", "audi"], "capacity": 2, "locked": False}
 
 @pytest.fixture
 def locked_inventory():
