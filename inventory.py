@@ -3,13 +3,15 @@ def add_item(inventory, item):
         raise ValueError
     elif len(inventory["items"]) >= inventory["capacity"]:
         raise ValueError
-    elif not isinstance(item,str):
+    elif not isinstance(item, str):
         raise ValueError
-    elif inventory["locked"] == True:
+    elif inventory["locked"] is True:
         return inventory
     else:
         inventory["items"].append(item)
         return inventory
+
+
 def remove_item(inventory, item):
     if inventory["locked"]:
         return inventory
@@ -17,6 +19,6 @@ def remove_item(inventory, item):
         inventory["items"].remove(item)
         return inventory
 
+
 def get_item_count(inventory):
     return len(inventory["items"])
-

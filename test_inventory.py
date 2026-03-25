@@ -1,17 +1,21 @@
 import pytest
 from inventory import add_item, remove_item, get_item_count
 
+
 def test_add_item(empty_inventory):
     result = add_item(empty_inventory, "automobile")
     assert result["items"] == ["automobile"]
 
+
 def test_add_item_empty(empty_inventory):
     with pytest.raises(ValueError):
-        add_item(empty_inventory,"")
+        add_item(empty_inventory, "")
+
 
 def test_add_item_number(empty_inventory):
     with pytest.raises(ValueError):
         add_item(empty_inventory, 3301)
+
 
 def test_add_item_capacity(empty_inventory):
     empty_inventory["capacity"] = 2
@@ -20,30 +24,35 @@ def test_add_item_capacity(empty_inventory):
     with pytest.raises(ValueError):
         add_item(empty_inventory, "Merc")
 
+
 def test_add_item_locked(empty_inventory):
     empty_inventory["locked"] = True
     result = add_item(empty_inventory, "Jeep")
     assert result["items"] == []
 
+
 def test_remove_item(full_inventory):
     result = remove_item(full_inventory, "bmw")
     assert result["items"] == ["audi"]
 
+
 def test_remove_item_not_found(full_inventory):
     with pytest.raises(ValueError):
-        remove_item(full_inventory,"merc")
+        remove_item(full_inventory, "merc")
+
 
 def test_remove_item_locked(full_inventory):
     full_inventory["locked"] = True
     result = remove_item(full_inventory, "bmw")
-    assert result["items"] ==["bmw","audi"]
+    assert result["items"] == ["bmw", "audi"]
+
 
 def test_get_item_count(locked_inventory):
     result = get_item_count(locked_inventory)
     assert result == 4
 
+
 def test_get_item_count_empty(empty_inventory):
     empty_inventory["locked"] = True
     result = get_item_count(empty_inventory)
     assert result == 0
-

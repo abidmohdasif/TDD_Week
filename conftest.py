@@ -1,29 +1,37 @@
 import pytest
 
+
 @pytest.fixture
 def player():
     return {"health": 100, "max_health": 100, "alive": True}
+
 
 @pytest.fixture
 def new_game():
     return {"score": 0, "level": 1, "active": True}
 
+
 @pytest.fixture
 def game():
     return {"score": 0, "multiplier": 1, "active": True}
+
 
 @pytest.fixture
 def game2():
     return {"score": 40, "multiplier": 3, "active": True}
 
+
 @pytest.fixture
 def empty_inventory():
     return {"items": [], "capacity": 10, "locked": False}
+
 
 @pytest.fixture
 def full_inventory():
     return {"items": ["bmw", "audi"], "capacity": 2, "locked": False}
 
+
 @pytest.fixture
 def locked_inventory():
-    return {"items": ["bmw", "audi", "merc", "jeep"], "capacity": 10, "locked": True}
+    return {"items": ["bmw", "audi", "merc", "jeep"],
+            "capacity": 10, "locked": True}
