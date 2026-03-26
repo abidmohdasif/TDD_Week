@@ -16,6 +16,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install pytest pytest-cov flake8
-
+      - name: Lint with flake8
+        run: flake8 .
       - name: Run tests
         run: pytest --cov=. --cov-fail-under=85
