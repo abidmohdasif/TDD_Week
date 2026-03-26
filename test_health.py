@@ -1,4 +1,4 @@
-from inventory import take_damage, heal, is_alive, add_points
+from health import take_damage, heal, is_alive, add_points
 
 
 def test_take_damage(player):
