@@ -1,3 +1,4 @@
+# commit one
 name: test tdd with yml
 
 on: push
@@ -5,7 +6,7 @@ on: push
 jobs: 
  test: 
   runs-on: ubuntu-latest
-  steps: 
+   steps:
     - uses: actions/checkout@v4
     - name: Set up Python
      uses: actions/checkout@v4
